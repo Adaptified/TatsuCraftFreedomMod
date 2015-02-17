@@ -1,3 +1,4 @@
+// Yoshi's note: Please do not require a reason to smite, nor smiting your own self for this command if you dont put a reason.
 package me.StevenLawson.TotalFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
