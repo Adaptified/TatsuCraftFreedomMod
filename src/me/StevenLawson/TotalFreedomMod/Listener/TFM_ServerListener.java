@@ -20,25 +20,25 @@ public class TFM_ServerListener implements Listener
 
         if (TFM_BanManager.isIpBanned(ip))
         {
-            event.setMotd(ChatColor.RED + "You are banned.");
+            event.setMotd(ChatColor.RED + "You're banned from Tatsucraft.  Please appeal @ v.ly/tcf");
             return;
         }
 
         if (TFM_ConfigEntry.ADMIN_ONLY_MODE.getBoolean())
         {
-            event.setMotd(ChatColor.RED + "Server is locked down.");
+            event.setMotd(ChatColor.RED + "Tatsucraft is on lockdown mode.");
             return;
         }
 
         if (Bukkit.hasWhitelist())
         {
-            event.setMotd(ChatColor.RED + "Whitelist enabled.");
+            event.setMotd(ChatColor.RED + "Tatsucraft's whitelist is enabled.");
             return;
         }
 
         if (Bukkit.getOnlinePlayers().length >= Bukkit.getMaxPlayers())
         {
-            event.setMotd(ChatColor.RED + "Server is full.");
+            event.setMotd(ChatColor.RED + "Tatsucraft is currently full.  Try again in five minutes.");
             return;
         }
 
