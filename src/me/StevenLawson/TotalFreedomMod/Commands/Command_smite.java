@@ -40,12 +40,7 @@ public class Command_smite extends TFM_Command
 
         else
         {
-            smite(player);
-            TFM_Util.playerMsg(sender, "You are required to use smite reasons!", ChatColor.RED);
-            if (sender instanceof Player)
-            {
-                ((Player) sender).setHealth(0d);
-            }
+         TFM_Util.playerMsg(sender, "Please, try to include a reason!", ChatColor.RED);
         }
 
         return true;
