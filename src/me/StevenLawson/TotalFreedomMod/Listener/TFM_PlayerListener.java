@@ -574,7 +574,7 @@ public class TFM_PlayerListener implements Listener
             {
                 if (!TFM_AdminList.isSuperAdmin(player))
                 {
-                    player.sendMessage(ChatColor.RED + "You are muted, STFU!");
+                    player.sendMessage(ChatColor.RED + "You are muted, please don't speak!");
                     event.setCancelled(true);
                     return;
                 }
@@ -819,12 +819,12 @@ public class TFM_PlayerListener implements Listener
             {
                 if (TFM_ConfigEntry.ADMIN_ONLY_MODE.getBoolean())
                 {
-                    player.sendMessage(ChatColor.RED + "Server is currently closed to non-superadmins.");
+                    player.sendMessage(ChatColor.RED + "Tatsucraft is currently closed to non-superadmins.");
                 }
 
                 if (TotalFreedomMod.lockdownEnabled)
                 {
-                    TFM_Util.playerMsg(player, "Warning: Server is currenty in lockdown-mode, new players will not be able to join!", ChatColor.RED);
+                    TFM_Util.playerMsg(player, "Warning: Tatsucraft is currenty in lockdown-mode, new players will not be able to join!", ChatColor.RED);
                 }
             }
         }.runTaskLater(TotalFreedomMod.plugin, 20L * 3L);
@@ -842,13 +842,7 @@ public class TFM_PlayerListener implements Listener
         final Player player = event.getPlayer();
 
         String name = player.getName();
-
-        if (player.getName().equals("ItzLevvie"))
-        {
-            name = ChatColor.BLUE + "ItzLevvie";
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&9Owner&8]");
-        }
-        else if (TFM_Util.DEVELOPERS.contains(player.getName()))
+         if (TFM_Util.DEVELOPERS.contains(player.getName()))
         {
             name = ChatColor.DARK_PURPLE + name;
             TFM_PlayerData.getPlayerData(player).setTag("&8[&5Developer&8]");
