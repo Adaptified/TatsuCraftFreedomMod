@@ -12,6 +12,7 @@ import java.util.Map.Entry;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_GameRuleHandler;
 import me.StevenLawson.TotalFreedomMod.TFM_Log;
+import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
 import net.minecraft.util.org.apache.commons.lang3.StringUtils;
 import org.bukkit.*;
@@ -71,9 +72,9 @@ public final class TFM_AdminWorld extends TFM_CustomWorld
         org.bukkit.material.Sign signData = (org.bukkit.material.Sign) welcomeSign.getData();
         signData.setFacingDirection(BlockFace.NORTH);
 
-        welcomeSign.setLine(0, ChatColor.GREEN + "AdminWorld");
+        welcomeSign.setLine(0, ChatColor.DARK_PURPLE + "Tatsucraft's");
         welcomeSign.setLine(1, ChatColor.DARK_GRAY + "---");
-        welcomeSign.setLine(2, ChatColor.YELLOW + "Spawn Point");
+        welcomeSign.setLine(2, ChatColor.GREEN + "Adminworld");
         welcomeSign.setLine(3, ChatColor.DARK_GRAY + "---");
         welcomeSign.update();
 
@@ -167,6 +168,7 @@ public final class TFM_AdminWorld extends TFM_CustomWorld
                 {
                     teleportCooldown.put(player, currentTimeMillis);
                     TFM_Log.info(player.getName() + " attempted to access the AdminWorld.");
+                    TFM_Util.playerMsg(player, "" + ChatColor.GRAY + "Hi there, please don't attempt to access AdminWorld!");
                     new BukkitRunnable()
                     {
                         @Override
