@@ -101,6 +101,10 @@ blocked_commands:
   - 's:b:/tellraw:_'
   - 's:b:/forestgen:_'
   - 's:b:/setidletimeout:_'
+  - 's:b:/coreprotect:_'
+  - 's:b:/core:_'
+  - 's:b:/co:_'
+  - 's:b:/tpall:Please use /tpaall'
 
   # Superadmin commands - Auto-eject
   - 's:a:/stop'
@@ -133,7 +137,7 @@ preprocess_log: true
 
 # Disable certain events
 disable:
-  night: true
+  night: false
   weather: true
 
 # Enable misc. features
