@@ -63,18 +63,18 @@ public final class TFM_AdminWorld extends TFM_CustomWorld
         World world = Bukkit.getServer().createWorld(worldCreator);
 
         world.setSpawnFlags(false, false);
-        world.setSpawnLocation(0, 50, 0);
+        world.setSpawnLocation(8, 50, -8);
 
-        Block welcomeSignBlock = world.getBlockAt(0, 50, 0);
+        Block welcomeSignBlock = world.getBlockAt(8, 50, -8);
         welcomeSignBlock.setType(Material.SIGN_POST);
         org.bukkit.block.Sign welcomeSign = (org.bukkit.block.Sign) welcomeSignBlock.getState();
 
         org.bukkit.material.Sign signData = (org.bukkit.material.Sign) welcomeSign.getData();
         signData.setFacingDirection(BlockFace.NORTH);
 
-        welcomeSign.setLine(0, ChatColor.DARK_PURPLE + "Tatsucraft's");
-        welcomeSign.setLine(1, ChatColor.DARK_GRAY + "---");
-        welcomeSign.setLine(2, ChatColor.GREEN + "Adminworld");
+        welcomeSign.setLine(0, ChatColor.DARK_GRAY + "---");
+        welcomeSign.setLine(1, ChatColor.AQUA + "Welcome to the");
+        welcomeSign.setLine(2, ChatColor.GREEN + "T" + ChatColor.AQUA + "C" + ChatColor.DARK_PURPLE + "F" + ChatColor.GREEN + "Adminworld!");
         welcomeSign.setLine(3, ChatColor.DARK_GRAY + "---");
         welcomeSign.update();
 
