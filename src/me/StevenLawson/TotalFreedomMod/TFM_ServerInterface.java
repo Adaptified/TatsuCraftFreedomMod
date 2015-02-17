@@ -116,7 +116,7 @@ public class TFM_ServerInterface
                 {
                     if (!TFM_AdminList.isSuperAdmin(onlinePlayer))
                     {
-                        onlinePlayer.kickPlayer("You have been kicked to free up room for an admin.");
+                        onlinePlayer.kickPlayer("NaN in position! (Hacking?)");
                         count--;
                     }
 
@@ -129,7 +129,7 @@ public class TFM_ServerInterface
 
             if (count >= server.getMaxPlayers())
             {
-                event.disallow(Result.KICK_OTHER, "The server is full and a player could not be kicked, sorry!");
+                event.disallow(Result.KICK_OTHER, "TCF is full and a player could not be kicked, sorry!");
                 return;
             }
             return;
@@ -140,21 +140,21 @@ public class TFM_ServerInterface
         // Server full check
         if (server.getOnlinePlayers().length >= server.getMaxPlayers())
         {
-            event.disallow(Result.KICK_FULL, "Sorry, but this server is full.");
+            event.disallow(Result.KICK_FULL, "Sorry, but TCF is currently full.");
             return;
         }
 
         // Admin-only mode
         if (TFM_ConfigEntry.ADMIN_ONLY_MODE.getBoolean())
         {
-            event.disallow(Result.KICK_OTHER, "Server is temporarily open to admins only.");
+            event.disallow(Result.KICK_OTHER, "TCF is temporarily open to admins only.");
             return;
         }
 
         // Lockdown mode
         if (TotalFreedomMod.lockdownEnabled)
         {
-            event.disallow(Result.KICK_OTHER, "Server is currently in lockdown mode.");
+            event.disallow(Result.KICK_OTHER, "TCF is currently in lockdown mode.");
             return;
         }
 
@@ -163,7 +163,7 @@ public class TFM_ServerInterface
         {
             if (onlinePlayer.getName().equalsIgnoreCase(username))
             {
-                event.disallow(Result.KICK_OTHER, "Your username is already logged into this server.");
+                event.disallow(Result.KICK_OTHER, "Your username is already logged on.");
                 return;
             }
         }
@@ -173,7 +173,7 @@ public class TFM_ServerInterface
         {
             if (!getWhitelisted().contains(username.toLowerCase()))
             {
-                event.disallow(Result.KICK_OTHER, "You are not whitelisted on this server.");
+                event.disallow(Result.KICK_OTHER, "You are not whitelisted.");
                 return;
             }
         }
@@ -200,7 +200,7 @@ public class TFM_ServerInterface
             if (TFM_Util.fuzzyIpMatch(testIp, ip, 4))
             {
                 event.disallow(Result.KICK_OTHER,
-                        ChatColor.RED + "Your IP address is permanently banned from this server.\n"
+                        ChatColor.RED + "Your IP address is permanently banned from TCF.\n"
                         + "Release procedures are available at\n"
                         + ChatColor.GOLD + TFM_ConfigEntry.SERVER_PERMBAN_URL.getString());
                 return;
